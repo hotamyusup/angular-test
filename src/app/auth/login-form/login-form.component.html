@@ -1,0 +1,32 @@
+<div class="login-form">
+  <form [formGroup]="form">
+    <div class="form-title">
+      <span class="field-icon">
+        <i class="fa fa-lock"></i>
+      </span>
+      Sign in
+    </div>
+
+    <div class="form-item">
+      <span class="field-icon"><i class="fa fa-lock"></i></span>
+      <div class="form-item-control">
+        <input formControlName="email" required />
+        <div class="form-error" *ngIf="showFieldErrs(form, 'email')">
+          <span *ngIf="fieldHasErr(form, 'email', 'required')">Email is required</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-item">
+      <span class="field-icon"><i class="fa fa-at"></i></span>
+      <div class="form-item-control">
+        <input type="password" formControlName="password" required />
+        <div class="form-error" *ngIf="showFieldErrs(form, 'password')">
+          <span *ngIf="fieldHasErr(form, 'password', 'required')">Password is required</span>
+        </div>
+      </div>
+    </div>
+
+    <button (click)="login()"><i class="fa fa-lock"></i> Log in</button>
+  </form>
+</div>
